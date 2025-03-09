@@ -6,6 +6,11 @@ first implementation defines the Sentence class as a sequence protocol. That
 means the class implements the __getitem__ method and the __len__ method. The
 class is iterable because all sequences are iterable. Being iterable, Sentence
 objects can be used to build lists and other iterable types.
+
+The reason sequences are iterable is that they implement the __getitem__
+method. Whenever Python needs to iterate over an object x, it automatically
+calls iter(x). The iter built-in function checks whether the object implements
+__iter__, and if not, falls back to __getitem__.
 """
 
 import re
