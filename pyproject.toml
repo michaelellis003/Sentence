@@ -1,5 +1,5 @@
 [project]
-name = "python-package-template"
+name = "sentence"
 version = "0.2.0"
 description = ""
 authors = [

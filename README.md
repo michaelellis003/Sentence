@@ -1,4 +1,4 @@
-# Python Package Template
+# Sentence
 
 [![](https://img.shields.io/badge/Python-3.10|3.11|3.12-blue)](https://www.python.org)
 [![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)](https://python-poetry.org/)
@@ -7,7 +7,7 @@
 [![codecov](https://codecov.io/gh/michaelellis003/python-package-template/graph/badge.svg?token=TUKP19SKJ3)](https://codecov.io/gh/michaelellis003/python-package-template)
 [![License](https://img.shields.io/github/license/michaelellis003/python-package-template)](https://github.com/michaelellis003/python-package-template/blob/main/LICENSE)
 
-The `python-package-template` repository offers a robust template for creating Python packages. It incorporates best practices for project structure, dependency management, testing, and CI/CD, enabling developers to quickly set up and maintain high-quality Python projects.
+<!-- The `python-package-template` repository offers a robust template for creating Python packages. It incorporates best practices for project structure, dependency management, testing, and CI/CD, enabling developers to quickly set up and maintain high-quality Python projects.
 
 ## Table of Contents
 1. [Features](#features)
@@ -110,4 +110,4 @@ This project uses GitHub Actions for continuous integration and deployment.
 
 - **Tagging & Releasing:** Automatically tags a new version based on `pyproject.toml`.
 - **Builds the Package:** Uses Poetry to create distribution files.
-- **Creates a GitHub Release:** Uploads the built package to GitHub releases.
+- **Creates a GitHub Release:** Uploads the built package to GitHub releases. -->
