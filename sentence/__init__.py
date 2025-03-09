@@ -1,5 +1,5 @@
 """This is the python_package_template package."""
 
-from .main import add, hello, multiply  # re-export
+from .sentence_v1 import SentenceV1
 
-__all__ = ['add', 'multiply', 'hello']
+__all__ = ['SentenceV1']
