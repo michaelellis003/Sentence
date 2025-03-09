@@ -21,7 +21,7 @@ class SentenceV1:
         words: A list of words in the sentence.
     """
 
-    def __init__(self, text):
+    def __init__(self, text: str):
         """Initializes the Sentence class with a text string.
 
         Args:
@@ -30,7 +30,7 @@ class SentenceV1:
         self.text = text
         self.words = RE_WORD.findall(text)
 
-    def __getitem__(self, index):
+    def __getitem__(self, index: int):
         """Returns the word at the given index.
 
         Args:
