@@ -4,7 +4,8 @@ This code is primarily from chapter 17 Fluent Python by Luciano Ramalho. The
 main purpose is to learn how iterators and generators work in Python. This
 first implementation defines the Sentence class as a sequence protocol. That
 means the class implements the __getitem__ method and the __len__ method. The
-class is iterable because all sequences are iterable.
+class is iterable because all sequences are iterable. Being iterable, Sentence
+objects can be used to build lists and other iterable types.
 """
 
 import re
