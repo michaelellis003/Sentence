@@ -52,3 +52,19 @@ def test_sentence_v3():
 
     with pytest.raises(StopIteration):
         next(s)
+
+
+def test_sentence_v4():
+    """Test the sentence_v4 function."""
+    s = SentenceV3('"The time has come," the Walrus said.')
+    s = iter(s)
+    assert next(s) == 'The'
+    assert next(s) == 'time'
+    assert next(s) == 'has'
+    assert next(s) == 'come'
+    assert next(s) == 'the'
+    assert next(s) == 'Walrus'
+    assert next(s) == 'said'
+
+    with pytest.raises(StopIteration):
+        next(s)
