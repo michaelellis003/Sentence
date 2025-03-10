@@ -2,69 +2,32 @@
 
 import pytest
 
-from sentence import SentenceV1, SentenceV2, SentenceV3
+from sentence import SentenceV1, SentenceV2, SentenceV3, SentenceV4, SentenceV5
 
 
-def test_sentence_v1():
-    """Test the sentence_v1 function."""
-    s = SentenceV1('"The time has come," the Walrus said.')
+def test_sentence_v1_through_v5():
+    """Test all of the sentence implementations function."""
+    test_string = '"The time has come," the Walrus said.'
 
-    s = iter(s)
-    assert next(s) == 'The'
-    assert next(s) == 'time'
-    assert next(s) == 'has'
-    assert next(s) == 'come'
-    assert next(s) == 'the'
-    assert next(s) == 'Walrus'
-    assert next(s) == 'said'
+    # Create all sentence objects
+    sentence_classes = [
+        SentenceV1,
+        SentenceV2,
+        SentenceV3,
+        SentenceV4,
+        SentenceV5,
+    ]
+    sentences = [iter(cls(test_string)) for cls in sentence_classes]
 
-    with pytest.raises(StopIteration):
-        next(s)
+    # Expected words to iterate through
+    expected_words = ['The', 'time', 'has', 'come', 'the', 'Walrus', 'said']
 
+    # Test that each implementation yields the same words
+    for word in expected_words:
+        for s in sentences:
+            assert next(s) == word
 
-def test_sentence_v2():
-    """Test the sentence_v2 function."""
-    s = SentenceV2('"The time has come," the Walrus said.')
-    s = iter(s)
-    assert next(s) == 'The'
-    assert next(s) == 'time'
-    assert next(s) == 'has'
-    assert next(s) == 'come'
-    assert next(s) == 'the'
-    assert next(s) == 'Walrus'
-    assert next(s) == 'said'
-
-    with pytest.raises(StopIteration):
-        next(s)
-
-
-def test_sentence_v3():
-    """Test the sentence_v3 function."""
-    s = SentenceV3('"The time has come," the Walrus said.')
-    s = iter(s)
-    assert next(s) == 'The'
-    assert next(s) == 'time'
-    assert next(s) == 'has'
-    assert next(s) == 'come'
-    assert next(s) == 'the'
-    assert next(s) == 'Walrus'
-    assert next(s) == 'said'
-
-    with pytest.raises(StopIteration):
-        next(s)
-
-
-def test_sentence_v4():
-    """Test the sentence_v4 function."""
-    s = SentenceV3('"The time has come," the Walrus said.')
-    s = iter(s)
-    assert next(s) == 'The'
-    assert next(s) == 'time'
-    assert next(s) == 'has'
-    assert next(s) == 'come'
-    assert next(s) == 'the'
-    assert next(s) == 'Walrus'
-    assert next(s) == 'said'
-
-    with pytest.raises(StopIteration):
-        next(s)
+    # Test that all iterators are exhausted
+    for s in sentences:
+        with pytest.raises(StopIteration):
+            next(s)
