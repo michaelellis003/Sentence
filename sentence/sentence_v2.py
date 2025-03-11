@@ -27,7 +27,7 @@ class SentenceV2:
         words: A list of words in the sentence.
     """
 
-    def __init__(self, text: str):
+    def __init__(self, text: str) -> None:
         """Initializes the Sentence class with a text string.
 
         Args:
@@ -36,7 +36,7 @@ class SentenceV2:
         self.text = text
         self.words = RE_WORD.findall(text)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """Returns a string representation of the Sentence class.
 
         Returns:
@@ -45,7 +45,7 @@ class SentenceV2:
         """
         return f'Sentence({reprlib.repr(self.text)})'
 
-    def __iter__(self):
+    def __iter__(self) -> 'SentenceIterator':
         """Returns an iterator over the words in the sentence.
 
         Returns:
@@ -62,7 +62,7 @@ class SentenceIterator:
         index: An integer representing the current index in the list of words.
     """
 
-    def __init__(self, words: list):
+    def __init__(self, words: list) -> None:
         """Initializes the SentenceIterator class with a list of words.
 
         Args:
@@ -71,7 +71,7 @@ class SentenceIterator:
         self.words = words
         self.index = 0
 
-    def __next__(self):
+    def __next__(self) -> str:
         """Returns the next word in the sentence.
 
         Returns:
@@ -91,7 +91,7 @@ class SentenceIterator:
     # so. Iterators are susposed to implement both __iter__ and __next__ and
     # doing so makes the iterator pass the issubclass(SentenceIterator,
     # abc.Iterable) test.
-    def __iter__(self):
+    def __iter__(self) -> 'SentenceIterator':
         """Returns an iterator over the words in the sentence.
 
         Returns:
