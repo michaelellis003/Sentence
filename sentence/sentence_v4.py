@@ -19,6 +19,7 @@ store the matches in a list.
 
 import re
 import reprlib
+from collections.abc import Iterator
 
 RE_WORD = re.compile(r'\w+')
 
@@ -30,7 +31,7 @@ class SentenceV4:
         text: A string representing the sentence.
     """
 
-    def __init__(self, text: str):
+    def __init__(self, text: str) -> None:
         """Initializes the Sentence class with a text string.
 
         Args:
@@ -38,7 +39,7 @@ class SentenceV4:
         """
         self.text = text
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """Returns a string representation of the Sentence class.
 
         Returns:
@@ -47,7 +48,7 @@ class SentenceV4:
         """
         return f'Sentence({reprlib.repr(self.text)})'
 
-    def __iter__(self):
+    def __iter__(self) -> Iterator[str]:
         """Returns an iterator over the words in the sentence.
 
         - finditer builds an iterator over the matches of RE_WORD on self.text,
